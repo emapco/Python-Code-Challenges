@@ -58,7 +58,7 @@ def send_email(service, user_id, message):
         print('An error occurred: %s' % error)
 
 
-SCOPES = ['https://mail.google.com/']
+SCOPES = ['https://mail.google.com/']  # authorization scopes
 def main():
     """ Gmail API boilerplate
     """
@@ -91,6 +91,8 @@ def main():
     email = Email(sender, receiver, subject_line, message_body)
     # Within the function, it calls the Gmail API to send an email
     send_email(service, 'me', create_email(email))
+    # userID: The user's email address.
+    # The special value me can be used to indicate the authenticated user.
 
 
 def solution():
