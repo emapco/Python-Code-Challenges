@@ -31,6 +31,6 @@ def solution(alarm_time, wav_file, message):
 
 if __name__ == '__main__':
     print("My solution:")
-    set_alarm(t.time() + 5, 'alarm.wav', 'Wake up!')
+    set_alarm(t.time() + 5, 'additional-files/alarm.wav', 'Wake up!')
     print("\nInstructor solution:")
-    solution(t.time() + 5, 'alarm.wav', 'Wake up!')
+    solution(t.time() + 5, 'additional-files/alarm.wav', 'Wake up!')

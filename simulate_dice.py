@@ -6,9 +6,7 @@ from collections import Counter
 def roll_dice(*die, simulation_count=1_000_000):
     # initialize dictionary
     min_roll = len(die)
-    max_roll = 0
-    for dice in die:
-        max_roll += dice
+    max_roll = sum(die)+1
     occurrences = {i: 0 for i in range(min_roll, max_roll + 1)}
 
     # roll each dice and sum them, simulation_count amount of times
