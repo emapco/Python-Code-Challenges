@@ -48,8 +48,8 @@ def solve_sudoku(puzzle):
                         else:
                             puzzle[row][col] = 0
                 return False  # num if not valid in row, col, or block
-
     return puzzle
+
 
 def solution(puzzle):
     for (row, col) in product(range(0,9), repeat=2):
@@ -64,9 +64,9 @@ def solution(puzzle):
                         allowed = False; break # not allowed in box
                 if allowed:
                     puzzle[row][col] = num
-                    if trial := solve_sudoku(puzzle):
-                        return trial
-                    else:
-                        puzzle[row][col] = 0
+                    #if trial := solve_sudoku(puzzle):
+                    #    return trial
+                    #else:
+                    #    puzzle[row][col] = 0
             return False # could not place a number in this cell
     return puzzle
