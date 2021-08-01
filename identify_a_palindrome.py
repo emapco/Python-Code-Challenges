@@ -12,7 +12,7 @@ def is_palindrome(string: str) -> bool:
     for i in range(str_length // 2):
         if i > str_length - i:
             break
-        if modified_str[i] != modified_str[(str_length - 1) - i]:
+        elif modified_str[i] != modified_str[(str_length - 1) - i]:
             is_palindrome_str = False
     return is_palindrome_str
 

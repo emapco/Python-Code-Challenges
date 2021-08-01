@@ -7,12 +7,9 @@ import string
 def count_unique_words(file_path):
     with open(file_path, 'r', encoding='utf8') as file:
         # regex matches all characters that are not alphanumeric, ', or -
-        forbidden_characters_match = [re.match("[^0-9a-zA-Z'-]+", char).string
-                                      if re.match("[^0-9a-zA-Z'-]+", char) else None
-                                      for char in string.printable]
-        # create string with these forbidden characters to strip later
-        forbidden_characters = ''.join(filter(
-            lambda x: x is not None, forbidden_characters_match))
+        forbidden_characters = ''.join([re.match("[^0-9a-zA-Z'-]+", char).string
+                                        for char in string.printable
+                                        if re.match("[^0-9a-zA-Z'-]+", char)])
 
         word_counts = Counter()
         for lines in file.readlines():
